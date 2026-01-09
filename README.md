@@ -1,99 +1,118 @@
 # Azure Virtual Machine (VM – Virtual Machine) Deployment
 
-## Overview
-This project demonstrates how to deploy, secure, and access a Linux-based Azure Virtual Machine (VM – Virtual Machine) using Microsoft Azure.  
-The goal was to build a basic but secure cloud environment following best practices for networking, access control, and cost management.
+# Azure Virtual Machine Deployment
 
----
+## Project Overview
 
-## Problem Statement
-Organizations need scalable and secure computing resources without purchasing physical hardware.  
-This project shows how a Cloud Engineer can create a Virtual Machine in the cloud, restrict access, verify connectivity, and manage cost effectively.
+This project demonstrates the deployment and configuration of an Azure Virtual Machine using secure networking best practices. I created and configured core Azure resources including a Resource Group, Virtual Network, Network Security Group, and a Linux Virtual Machine. I also verified secure SSH access and validated network behavior to ensure the environment was functioning correctly.
 
 ---
 
 ## Architecture Overview
-- Resource Group (RG – Resource Group)
-- Virtual Network (VNet – Virtual Network)
-- Network Security Group (NSG – Network Security Group)
-- Virtual Machine (VM – Virtual Machine)
-- Secure Shell (SSH – Secure Shell) access
+
+- Resource Group to organize all Azure resources  
+- Virtual Network for network isolation and traffic control  
+- Network Security Group to restrict and allow inbound traffic  
+- Linux Virtual Machine accessed securely via SSH  
 
 ---
 
-## Tools & Technologies Used
-- Microsoft Azure Portal
-- Azure Virtual Machines
-- Azure Virtual Network
-- Azure Network Security Group
-- Ubuntu Linux
-- Secure Shell (SSH)
+## Step-by-Step Deployment
+
+### Step 1: Create Resource Group
+I created a dedicated resource group to logically organize all resources related to this project.
+
+![Step 1 – Resource Group Overview](screenshots/01-resource-group-overview.png)
 
 ---
 
-## Steps Performed
+### Step 2: Create Virtual Network
+I created a virtual network to provide isolated networking for the virtual machine.
 
-### 1. Resource Group Creation
-- Created a Resource Group to logically organize all Azure resources for this project.
-
-### 2. Virtual Network Setup
-- Created a Virtual Network to provide network connectivity for the Virtual Machine.
-
-### 3. Network Security Group Configuration
-- Created a Network Security Group to control inbound traffic.
-- Allowed Secure Shell (SSH) access on port 22 from my IP address only.
-
-### 4. Virtual Machine Deployment
-- Deployed an Ubuntu Linux Virtual Machine.
-- Selected a small VM size to minimize cost.
-- Attached the VM to the Virtual Network and Network Security Group.
-
-### 5. Secure Shell (SSH) Access
-- Connected to the Virtual Machine using Secure Shell (SSH).
-- Verified successful access by logging into the system.
-
-### 6. System Verification
-- Verified the host name of the Virtual Machine.
-- Confirmed the private IP address using Linux networking commands.
-
-### 7. Cost Management
-- Stopped (deallocated) the Virtual Machine after testing to prevent unnecessary charges.
+![Step 2 – Virtual Network Overview](screenshots/02-virtual-network-overview.png)
 
 ---
 
-## Screenshots
-Screenshots documenting each step of the deployment and verification process are included in this repository:
-- Resource Group overview
-- Virtual Network overview
-- Network Security Group inbound rules
-- Virtual Machine deployment status
-- Secure Shell (SSH) connection
-- Host name and IP address verification
-- Virtual Machine stopped state
+### Step 3: Create Network Security Group
+I created a Network Security Group (NSG) to control inbound and outbound traffic.
+
+![Step 3 – Network Security Group Overview](screenshots/03-network-security-group-overview.png)
 
 ---
 
-## Security Considerations
-- Restricted Secure Shell (SSH) access to my IP address only.
-- Used Network Security Group rules to limit inbound traffic.
-- Followed least-privilege principles.
+### Step 4: Configure Virtual Machine Basics
+I configured the virtual machine basics including name, region, image, and size.
+
+![Step 4 – Virtual Machine Basics](screenshots/04-virtual-machine-basics.png)
+
+---
+
+## Step 5: Configure VM Networking
+I attached the virtual machine to the virtual network and applied the Network Security Group.
+
+![Step 5 - Virtual Machine Networking](screenshots/05-virtual-machine-networking.png)
+
+---
+
+## Step 6: Deployment Successful
+I reviewed and completed the deployment, confirming the virtual machine was successfully created.
+
+![Step 6 - Deployment Successful](screenshots/06-deployment-succeeded.png)
+
+---
+
+## Step 7: Configure NSG SSH Rule
+I verified that the Network Security Group allowed SSH traffic securely.
+
+![Step 7 - NSG SSH Rule](screenshots/07-nsg-ssh-rule.png)
+
+---
+
+---
+
+### Step 8: Establish SSH Connection
+I connected to the virtual machine using SSH to verify secure access.
+
+![Step 8 – SSH Connection](screenshots/08-ssh-connection.png)
+
+---
+
+### Step 9: Verify Hostname and IP Address
+I verified the virtual machine’s hostname and private IP address using command-line tools.
+
+![Step 9 – Hostname and IP Verification](screenshots/09-hostname-ip-verification.png)
+
+---
+
+### Step 10: Stop Virtual Machine
+I safely stopped the virtual machine to prevent unnecessary resource usage and cost.
+
+![Step 10 – Virtual Machine Stopped](screenshots/10-vm-stopped.png)
 
 ---
 
 ## What I Learned
-- How to deploy and manage an Azure Virtual Machine.
-- How cloud networking and security controls work together.
-- How to securely connect to a Linux system using Secure Shell (SSH).
-- The importance of shutting down resources to manage cloud costs.
+
+- How to deploy and manage Azure Virtual Machines  
+- How Azure Virtual Networks and Network Security Groups work together  
+- How to secure access using SSH  
+- How to validate network connectivity using Linux command-line tools  
+- How to document cloud projects clearly using GitHub  
 
 ---
 
-## Future Improvements
-- Add Azure Bastion for browser-based secure access.
-- Automate deployment using Infrastructure as Code (Terraform or ARM templates).
-- Add monitoring and alerting using Azure Monitor.
+## Skills Demonstrated
+
+- Microsoft Azure  
+- Virtual Machine Deployment  
+- Azure Virtual Networking  
+- Network Security Groups (NSGs)  
+- Secure SSH Access  
+- Linux Command Line  
+- Cloud Documentation with GitHub  
 
 ---
 
-## 🎥 Video Walkthrough
-A full walkthrough video of this project will be added soon.
+## Summary
+
+This project demonstrates my ability to design, deploy, secure, and validate Azure virtual machine infrastructure using industry best practices. I implemented secure networking, controlled access using Network Security Groups, verified connectivity through SSH, and documented the entire process in a professional and structured manner.
